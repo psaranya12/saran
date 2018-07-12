@@ -1,0 +1,37 @@
+package sample;
+import java.io.*;
+import java.util.Scanner;
+public class anagram {
+public static void main(String[] args){
+	String s1,s2;
+	Scanner s=new Scanner(System.in);
+	s1=s.next();
+	s2=s.next();
+	int l1=s1.length();
+	int l2=s2.length();
+	int count=0;
+	String a1[]=new String[l1];
+	String a2[]=new String[l2];
+	if(l1==l2){
+		for(int i=0;i<l1;i++){
+			a1[i]=s1.substring(i, i+1);
+			a2[i]=s2.substring(i, i+1);
+		}
+		for(int i=0;i<l1;i++){
+			for(int j=0;j<l2;j++){
+				if(a1[i].equalsIgnoreCase(a2[j])){
+					count++;
+				}
+			}
+		}
+		if(count>=l1){
+			System.out.println("true");
+		}else{
+			System.out.println("false");
+		}
+	}else{
+		System.out.println("false");
+	}
+
+}
+}
